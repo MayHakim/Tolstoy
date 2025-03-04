@@ -33,8 +33,8 @@ AI-powered recommendation generation \
 Adaptive suggestion mechanism 
 
 ## Recommendation Approach
-### RAG-Based Recommendation System
-With a limited product database of 20 items and no historical purchase data, traditional recommendation methods fell short. To solve this, I implemented a Retrieval-Augmented Generation (RAG) recommendation system using GPT. \
+### LLM-Based Recommendation System
+With a limited product database of 20 items and no historical purchase data, traditional recommendation methods fell short. To solve this, I implemented LLM-based recommendation system using GPT. \
 Large Language Models (LLMs) offer powerful capabilities for enhancing customer interactions:
 1. Sentiment Analysis- LLMs can deeply analyze text data from reviews and conversations to understand the emotional context behind customer preferences and feedback.
 2. Customer Intent Detection- By examining customer inquiries, the system can precisely identify the underlying intent, enabling more accurate and targeted recommendations.
