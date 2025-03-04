@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Set OpenAI API key
-openai.api_key = "insert API key here"
+openai.api_key = "insert-your-api-key-here"
 
 # Load product data
 with open('product_data.json', 'r') as f:
@@ -16,7 +16,6 @@ with open('product_data.json', 'r') as f:
 
 # User profiles storage (in-memory for simplicity, would be a database in production)
 user_profiles = {}
-
 
 def initialize_user_profile(user_id):
     """Initialize a new user profile with default values."""
@@ -69,23 +68,22 @@ def update_user_profile(user_id, message, assistant_response):
         # Update profile with new information
         if "price_range" in extracted_preferences:
             profile["price_range"] = extracted_preferences["price_range"]
-            # print(f"price_range: {profile['price_range']}") # for debugging
+
         if "preferred_brands" in extracted_preferences:
             profile["preferred_brands"].extend(extracted_preferences["preferred_brands"])
             profile["preferred_brands"] = list(set(profile["preferred_brands"]))
-            # print(f"preferred_brands: {profile['preferred_brands']}") # for debugging
+
         if "preferred_categories" in extracted_preferences:
             profile["preferred_categories"].extend(extracted_preferences["preferred_categories"])
             profile["preferred_categories"] = list(set(profile["preferred_categories"]))
-            # print(f"preferred_categories: {profile['preferred_categories']}") # for debugging
+
         if "style_preferences" in extracted_preferences:
             profile["style_preferences"].extend(extracted_preferences["style_preferences"])
             profile["style_preferences"] = list(set(profile["style_preferences"]))
-            # print(f"style_preferences: {profile['style_preferences']}") # for debugging
+
         if "color_preferences" in extracted_preferences:
             profile["color_preferences"].extend(extracted_preferences["color_preferences"])
             profile["color_preferences"] = list(set(profile["color_preferences"]))
-            # print(f"color_preferences: {profile['color_preferences']}") # for debugging
 
 
     except Exception as e:
@@ -110,8 +108,6 @@ def gpt_rank_products(user_message, user_profile, products):
     } for p in products])
 
     profile_str = json.dumps(user_profile)
-    # print(f"products_str: {products_str}") # for debugging
-    # print(f"profile_str: {profile_str}") # for debugging
 
     try:
         response = openai.chat.completions.create(
@@ -134,7 +130,7 @@ def gpt_rank_products(user_message, user_profile, products):
 
                 Sort by relevance_score in descending order. 
                 Return at most 3 products with json named 'products'.
-                If no products match, try to suggest the closest 3 alternatives with json named "alternatives". 
+                If no products match, try to suggest the closest 3 alternatives with json named "alternatives". Category is the most important factor.
                 User profile: {profile_str}
                 Available products: {products_str}"""},
                 {"role": "user", "content": user_message}
