@@ -35,6 +35,17 @@ Adaptive suggestion mechanism
 ## Recommendation Approach
 ### RAG-Based Recommendation System
 With a limited product database of 20 items and no historical purchase data, traditional recommendation methods fell short. To solve this, I implemented a Retrieval-Augmented Generation (RAG) recommendation system using GPT. \
+Large Language Models (LLMs) offer powerful capabilities for enhancing customer interactions:
+1. Sentiment Analysis- LLMs can deeply analyze text data from reviews and conversations to understand the emotional context behind customer preferences and feedback.
+2. Customer Intent Detection- By examining customer inquiries, the system can precisely identify the underlying intent, enabling more accurate and targeted recommendations.
+3. Customer Profiling- LLMs transform text interactions into comprehensive customer profiles, capturing nuanced preferences, interests, and behavioral patterns.
+4. Explainable Recommendations- The system goes beyond simple matching by:
+providing structured, context-aware recommendations, 
+generating personalized explanation messages,
+highlighting key product benefits,
+and making recommendations more appealing and transparent
+
+
 The core idea was to transform user preferences and product data into a format GPT could understand and process. By providing comprehensive context - including the user's current message, preference profile, and full product dataset - the system could generate intelligent, contextually relevant recommendations. \
 When a user makes a request, the system sends their preferences, message, and product data to GPT. The model is asked to:
 1. Rank existing products based on the user's information
