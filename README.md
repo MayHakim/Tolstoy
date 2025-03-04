@@ -5,14 +5,14 @@ Learn and adapt to user preferences \
 Provide intelligent product recommendations 
 
 ## Objectives
-#### Multi-Turn Dialogue Management: 
+### Multi-Turn Dialogue Management
 Maintain contextual conversation flow \
 Ask clarifying questions about user needs \
 Provide relevant and personalized responses in natural language
-#### Dynamic User Profiling: 
+### Dynamic User Profiling
 Track and update user preferences in real-time \
 Capture insights like price range preferences, preferred brands, product categories of interest, style and color preferences
-#### Intelligent Recommendation System: 
+### Intelligent Recommendation System
 Use generative AI to match products to user needs \
 Improve recommendations through conversation \
 Provide reasoning for product suggestions
@@ -23,7 +23,7 @@ Frontend: HTML, CSS, JavaScript \
 Backend: Python (Flask) \
 AI Engine: OpenAI GPT-4o-mini \
 Recommendation Logic: Dynamic profile-based matching
- ### Product Dataset
+### Product Dataset
 20 diverse products across categories stored in a JSON file. \
 Attributes include: name, category, price, brand, color, description and tags.
 ### Key Technical Features
@@ -62,4 +62,49 @@ The system also preserves conversation history, using the full interaction conte
 1. Clone the git repo
 2. Run the code
 3. Insert your project path + "frontend/index.html" in your browser
-4. Get your shopping assistance! 
+4. Get your shopping assistance!
+
+### Optional Tests
+1. Multi-Turn Context and Preference Building \
+Purpose: Evaluate context retention and preference learning \
+User: "I'm looking for some new headphones" \
+User: "I prefer wireless ones that are good for travel" \
+User: "I'd like to spend less than $150 if possible" \
+User: "That looks good. What about something for my home office too?" \
+User: "I need a good desk setup for working from home" \
+User: "I'd be willing to spend more on quality items for my office"
+2. Brand and Style Preference Recognition \
+Purpose: Test if the assistant remembers brand and style preferences \
+User: "I like minimalist design products" \
+User: "Show me some kitchen appliances with clean, simple designs" \
+User: "I really like CookCraft products" \
+User: "Let's look at some home decor items now" \
+(Check if recommendation still favors minimalist designs)  
+3. Price Range Adaptation and Category Switching \
+Purpose: Test dynamic price range understanding and category transitions \
+User: "I need some budget-friendly home items under $50" \
+User: "Those look good. Actually, I just got a bonus at work. Show me some premium options now" \
+User: "What high-end electronics do you recommend?" \
+User: "Now I'm looking for something for my bathroom" \
+(Check if recommendations include both budget and premium options based on demonstrated flexibility) 
+4. Negative Preference Handling \
+Purpose: Test tracking of dislikes and negative preferences \
+User: "I don't like bright colorful products" \
+User: "I prefer items in neutral colors like black, white, or gray" \
+User: "What bags do you have?" \
+(Check if recommendations avoid bright colors) \
+User: "I don't want anything from UrbanTrek" \
+(Check if brand is excluded from future recommendations) 
+5. Handling Edge Cases 
+Purpose: Test response to challenging or unusual requests \
+User: "I want the absolute best quality headphones under $50" \
+User: "Do you have anything like a smart refrigerator that also walks my dog?" \
+User: "I need something... nice" \
+(Intentionally vague to test clarification abilities)
+
+
+
+
+
+
+
