@@ -46,3 +46,9 @@ When a user makes a request, the system sends their preferences, message, and pr
 Users often communicate product preferences using ambiguous or imprecise language. For instance, "I want AirForce" implicitly means seeking Nike shoes, while "Something professional for work" requires style interpretation. \
 To address this, I leveraged GPT's natural language understanding to systematically extract and interpret user preferences. The extraction focuses on five key attributes: price range, brands, product categories, style and color. \
 The system also preserves conversation history, using the full interaction context to continuously refine understanding and improve recommendation accuracy.
+
+## How to Use
+1. Clone the git repo
+2. Run the code
+3. Insert your project path + "frontend/index.html" in your browser
+4. Get your shopping assistance! 
