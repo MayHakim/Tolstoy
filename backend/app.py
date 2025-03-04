@@ -131,6 +131,7 @@ def gpt_rank_products(user_message, user_profile, products):
                 Sort by relevance_score in descending order. 
                 Return at most 3 products with json named 'products'.
                 If no products match, try to suggest the closest 3 alternatives with json named "alternatives". Category is the most important factor.
+                Prefer the user's message over the profile when determining relevance.
                 User profile: {profile_str}
                 Available products: {products_str}"""},
                 {"role": "user", "content": user_message}
@@ -139,9 +140,7 @@ def gpt_rank_products(user_message, user_profile, products):
         )
 
         rankings_raw = json.loads(response.choices[0].message.content)
-        print(f"response: {response.choices[0].message.content}") # for debugging
         rankings = rankings_raw['products']
-        print(f"rankings: {rankings}") # for debugging
         return rankings
 
     except Exception as e:
