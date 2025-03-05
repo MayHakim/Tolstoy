@@ -60,9 +60,10 @@ The system also preserves conversation history, using the full interaction conte
 
 ## How to Use
 1. Clone the git repo
-2. Run the code
-3. Insert your project path + "frontend/index.html" in your browser
-4. Get your shopping assistance!
+2. Set your OpenAI API key (backend/app.py, line 11)
+3. Run the code
+4. Insert your project path + "frontend/index.html" in your browser
+5. Get your shopping assistance!
 
 ### Optional Tests
 1. Multi-Turn Context and Preference Building \
